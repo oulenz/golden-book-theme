@@ -1,0 +1,181 @@
+@import url("reset.css");
+@import url("pygment.css");
+@import url("typogrify.css");
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic);
+html {
+  height: 100%;
+}
+
+body {
+    #background: #FDF6E3;
+    background: #FEFAF1;
+    color: #7A786B;
+    font-size: 16px;
+    font-family: 'Crimson Text', 'Tex Gyre Pagella', 'Palatino Linotype', 'Palatino', serif;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-shadow:0px 0px 1px #BFBFBF;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.body {clear: both; margin: 0 auto; width: 800px;}
+
+#banner {
+	margin: 0 auto;
+  #padding-top:120px;
+	padding: 10em 0 0 0;
+}
+
+#subtitle{
+  text-shadow:0px 0px 1px #BFBFBF;
+  display: block;
+  text-align:center;
+  color: #383732;
+  font-style:italic;
+	margin-bottom: 1em;
+  line-height: 25px;
+  font-size: 1.6em;
+}
+
+#title{
+  display: block;
+}
+
+h1, h1 a:link, h1 a:visited, h1 a:hover, h1 a:active {
+  font-size: 50px;
+  line-height: 50px;
+  text-align:center;
+  color: #383732;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0 0 .4em 0;
+  text-decoration: none;
+  background: none;
+}
+
+h1 strong {
+  font-size: 0.36em;
+  font-weight: normal;
+}
+
+#extras-menu{
+  font-size: 1em;
+  margin-top: .8em;
+  margin-bottom: .8em;
+}
+
+#content-menu {
+  font-size: 1.4em;
+  margin-top: .8em;
+  margin-bottom: .8em;
+}
+
+#banner nav, #banner nav a:link, #banner nav a:visited {
+  background:transparent;
+  #padding: 0.1em;
+  text-align: center;
+  width: 800px;
+  #font-style:italic;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  text-decoration: none;
+  color: #7A786B;
+}
+#banner nav a:hover, #banner nav a:active, #banner nav .active a:link, #banner nav .active a:visited, #banner nav a.active {
+  #text-decoration:underline;
+  #color: #383732;
+  color: #000000;
+}
+
+hr { border: 1px dotted #8A887B; }
+
+h2 {
+  font-size: 31px;
+	line-height: 50px;
+  text-shadow:0px 0px 1px #BFBFBF;
+	font-weight: normal;
+  font-style:italic;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align:center;
+}
+
+#posts-list {list-style: none; margin: 0;}
+#posts-list .hentry {padding-left: 10px; position: relative;}
+
+a {outline: 0;}
+a img {border: 0px; text-decoration: none;}
+a:link, a:visited {
+	color: inherit;
+}
+
+p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: justify
+  }
+p + p {
+  text-indent: 1.5em;
+  }
+
+strong, b {font-weight: bold;}
+em, i {font-style: italic;}
+
+ul {
+	list-style: outside disc;
+	margin: 1em 0 1.5em 1.5em;
+}
+ol {
+	list-style: outside decimal;
+	margin: 1em 0 1.5em 1.5em;
+}
+dl {margin: 0 0 1.5em 0;}
+dt {
+  font-weight: bold;
+  margin-top: 1.5em;
+  #color: #383732;
+}
+dt a {text-decoration: none;}
+dd {
+  margin-left: 1.5em;
+  #color: #383732;
+}
+
+header, section, aside, nav, article, figure {
+	display: block;
+}
+
+#content {
+	background: transparent;
+	margin-bottom: 2em;
+	overflow: hidden;
+	padding: 20px 20px;
+	width: 760px;
+	
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+  flex: 1;
+}
+#content img {
+  display: block;
+  text-indent: 0em;
+  width: 100%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+footer {
+	display: block;
+  padding-bottom: 2em;
+  text-align: right;
+  #position: fixed;
+  #bottom: 0px;
+}
+
+#footertext {
+color: #9A988B;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}{{ SITENAME|striptags }}{%endblock%}</title>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        {% if not page and not article %}
+                <meta name="author" content="{{ AUTHOR }}" />
+                <meta name="copyright" content="{{ AUTHOR }}" />
+                {% if SITE_DESCRIPTION %}
+                        <meta name="description" content="{% block head_description %}{{ SITE_DESCRIPTION }}{% endblock head_description %}" />
+                {% endif %}
+        {% endif %}
+        {% block meta_tags_in_head %}
+        {% endblock meta_tags_in_head %}
+        <meta name="robots" content="{% block robots %}index,follow{% endblock %}">
+
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
+        {% if FEED_ATOM %}
+                <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+        {% endif %}
+        {% if FEED_RSS %}
+                <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+
+        <!--[if IE]>
+                <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="{{ SITEURL }}/css/ie.css"/>
+                <script src="{{ SITEURL }}/js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="{{ SITEURL }}/css/ie6.css"/><![endif]-->
+
+    </head>
+    <body id="index" class="home">
+        <header id="banner" class="body">
+            <div id="title"><h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1></div>
+            {% if SITESUBTITLE %} <div id="subtitle">{{ SITESUBTITLE }}</div> {% endif %}
+            <div id="extras-menu">
+                <nav>
+                    <a href="{{ SITEURL }}/golden-book.pdf">pdf</a>&ensp;
+                    {% for cat in ['works', 'notes', 'references', 'changelog'] %}
+                        <a {% if page_name == cat %}class="active"{% endif %} href="{{ SITEURL }}/{{ cat }}">{{ cat }}</a>&ensp;
+                    {% endfor %}
+
+                </nav>
+            </div>
+            <div id="content-menu">
+                <nav>
+                    <a {% if page_name == 'people' %}class="active"{% endif %} href="{{ SITEURL }}/people">people:</a>&nbsp;
+                    {% for cat, null in categories%}
+                        {% if (cat|string).startswith('people/') and not (cat|string).startswith('people/+') %}
+                            <a {% if page_name == (cat|string) %}class="active"{% endif %} href="{{ SITEURL }}/{{ cat.url }}">{{ cat.shortname }}</a>&nbsp;
+                        {% endif %}
+                    {% endfor %}
+                    {% for cat, null in categories%}
+                        {% if (cat|string).startswith('people/+') %}
+                            <a {% if page_name == (cat|string) %}class="active"{% endif %} href="{{ SITEURL }}/{{ cat.url }}">{{ cat.shortname }}</a>&nbsp;
+                        {% endif %}
+                    {% endfor %}
+                    &emsp;&emsp;<a {% if page_name == 'places' %}class="active"{% endif %} href="{{ SITEURL }}/places">places</a>&nbsp;
+
+                </nav>
+            </div>
+        </header><!-- /#banner -->
+        {% block content %}
+        {% endblock %}
+
+        <footer id="footertext" class="body">
+            {{FOOTERTEXT}} Edited by Oliver Urs Lenz. Powered by <a href="http://getpelican.com/">Pelican</a>, with a modified version of the <a href="https://github.com/getpelican/pelican-themes/tree/master/cebong">cebong</a> theme.
+        </footer><!-- /#contentinfo -->
+    </body>
+</html>

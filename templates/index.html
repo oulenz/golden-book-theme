@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block robots %}index,follow{% endblock %}
+{% block content_title %}{% endblock %}
+{% block content %}        
+{% if articles %}
+    <section id="content" class="body">
+        <dl id="posts-list" class="hfeed">
+            {% for article in articles_page.object_list %}
+                <dt id="{{ article.slug }}"><a href="#{{ article.slug }}">{{ article.title }}</a></dt>
+                <dd>{{ article.content}}</dd>
+                <!--<p class="first-par"><h3><a href="#{{ article.slug }}">{{ article.title }}</a></h3>  {{ article.content | replace('<p>', '', count=1) }}-->
+            {% endfor %}
+        </dl><!-- /#articles-list -->
+    </section><!-- /#content -->
+{% endif %}
+{% endblock content %}
